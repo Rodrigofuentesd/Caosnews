@@ -1,0 +1,362 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Noticias Usuario</title>
+
+ <!-- Bootstrap core CSS -->
+ <link href="{%static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+ <!-- Custom styles for this template -->
+ <link href="{%static 'core/css/modern-business.css' %}" rel="stylesheet" />
+ <!-- Buscador -->
+ <link href="{%static 'core/css/Buscador.css' %}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+ <!-- Navigation -->
+ <nav
+ class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"
+>
+ <div class="container">
+   <a href="{% url 'index-invitado' %}"
+     ><img class="logo" src="{%static 'core/images/logo.jpg' %}" alt=""
+   /></a>
+   <button
+     class="navbar-toggler navbar-toggler-right"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarResponsive"
+     aria-controls="navbarResponsive"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+   >
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ml-1">
+       <li class="nav-item active dropdown">
+         <a
+           class="nav-link dropdown-toggle"
+           href="#"
+           id="navbarDropdownPortfolio"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false"
+         >
+           Categorias
+         </a>
+         <div
+           class="dropdown-menu dropdown-menu-right"
+           aria-labelledby="navbarDropdownPortfolio"
+         >
+           <a class="dropdown-item" href="{% url 'index-invitado' %}">Política</a>
+           <a class="dropdown-item" href="{% url 'index-invitado' %}">Economía</a>
+           <a class="dropdown-item" href="{% url 'index-invitado' %}">Cultural</a>
+           <a class="dropdown-item" href="{% url 'index-invitado' %}">Científica</a>
+           <a class="dropdown-item" href="{% url 'index-invitado' %}">Policial</a>
+         </div>
+       </li>
+       <li class="nav-item">
+         <div>
+           <div class="autocomplete" >
+             <input id="myInput" class="buscador" name="mySearch" placeholder="Buscar..." />
+           </div>
+          
+         </div>
+       </li>
+     </ul>
+   </div>
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item"></li>
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'create_user' %}">Crear Usuario</a>
+       </li>
+       <!-- Boton de inicio (abre) -->
+       <button
+         onclick="document.getElementById('id01').style.display='block'"
+       >
+         Inicio
+       </button>
+       <!-- The Modal -->
+       <div id="id01" class="modal">
+         <span
+           onclick="document.getElementById('id01').style.display='none'"
+           class="close"
+           title="Close Modal"
+           >&times;</span
+         >
+         <!-- Modal Content -->
+         <form class="modal-content animate" action="/action_page.php">
+           <div class="imgcontainer">
+             <img
+               src="{%static 'core/images/logo.jpg' %}"
+               alt="Avatar"
+               class="avatar"
+             />
+           </div>
+           <div class="container">
+             <label for="uname"><b>Usuario</b></label>
+             <input
+               type="text"
+               placeholder="Ingrese el usuario"
+               name="uname"
+               required
+             />
+
+             <label for="psw"><b>Clave</b></label>
+             <input
+               type="password"
+               placeholder="Ingrese la contraseña"
+               name="psw"
+               required
+             />
+
+             <a href="{% url 'index-usuario' %}"
+               ><input class="button" type="button" value="Iniciar"
+             /></a>
+             <label>
+               <input type="checkbox" checked="checked" name="remember" />
+               Recuerdame
+             </label>
+           </div>
+           <div class="container" style="background-color: #f1f1f1">
+             <button
+               type="button"
+               onclick="document.getElementById('id01').style.display='none'"
+               class="cancelbtn"
+             >
+               Cancelar
+             </button>
+             <span class="psw">
+               <a href="#">has olvidado la contraseña?</a></span
+             >
+           </div>
+         </form>
+       </div>
+     </ul>
+   </div>
+ </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Tecnología al alcance de la mano con IMOU
+    <small>por
+      <a href="{%url 'index-editor-user' %}">Carlos Martínez</a>
+    </small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'index-invitado' %}">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Blog Home 2</li>
+  </ol>
+
+  <div class="row">
+
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+      <!-- Preview Image -->
+      <a href="{% url 'index-invitado' %}"><img class="noticiaTecnologia" src="{%static 'core/images/tecnologia.jpg' %}" alt=""></a>
+
+      <hr>
+
+      <!-- Date/Time -->
+      <p>Fecha de publicación 05/05/2021</p>
+
+      <hr>
+
+      <!-- Post Content -->
+      <p class="lead">Los sistemas Hazlo Tú Mismo (DIY por sus siglas en inglés), han revolucionado el poder de decisión de compra de las personas,
+        en la actualidad se buscan soluciones rápidas a un menor costo y eso nos hace pensar en todo aquello que nosotros podemos solucionar, instalar,
+        recrear e incluso disfrutar. </p>
+
+      <blockquote class="blockquote">
+        <p class="mb-0">En estos años, durante el rápido avance del Internet de las cosas, las personas han aprendido a desarrollar diversas habilidades,
+          siendo capaces de instalar sus propios sistemas de seguridad con la intención de monitorear sus hogares y/o negocios sin ayuda de un profesional.
+          Actualmente el mercado ofrece diversos sistemas de monitoreo o videovigilancia que no requieren de conocimientos especiales para su instalación,
+          programación, uso y además significa un ahorro en cuanto a gastos de implementación.</p>
+
+      </blockquote>
+
+      <p>IMOU es una marca comprometida con la creación de un ambiente seguro, privado y conveniente para ti y tu familia y por eso cuenta con cámaras, alarmas,
+        timbres y cerraduras inteligentes, todas con instalación DIY de alta calidad impulsados por tecnología de vanguardia. Estas soluciones se pueden colocar
+        en cualquier parte del hogar y/o negocio sin dañar paredes, fachadas o muebles debido a su fácil instalación.</p>
+
+      <p>Como marca de IoT inteligente, el objetivo de IMOU es producir soluciones que permitan disfrutar una vida segura, simple e inteligente por medio de
+        tecnología innovadora, para uso en hogares y PyMEs.</p>
+
+      <p>Día a día el tema de la instalación DIY en seguridad va creciendo y especialmente en Latinoamérica es donde notamos el interés por monitorear
+        (aún sin estar en casa) y cuidar algo de gran importancia para la mayoría de nosotros, como bebés, niños pequeños, mascotas, etc. </p>
+
+      <p>Los productos IMOU son una gran opción en estos tiempos, ya que con monitoreo de primera calidad, instalación y configuración DIY, tienen todo lo necesario
+        para cumplir con las expectativas de sus clientes. Proporciona seguridad las 24 horas, el sistema de seguridad inteligente IMOU protegiendo cada rincón de la propiedad.</p>
+
+      <p>Entre los beneficios de adquirir productos marca IMOU encontramos precios accesibles, una nube de almacenamiento con un costo competitivo y una aplicación
+        con una amplia gama de funciones como:</p>
+
+        <ul>
+          <li>Grabar.</li>
+          <li>Monitorear en tiempo real.</li>
+          <li>Compartir con otro usuario la visibilidad.</li>
+          <li>Conectar más de 1 cámara.</li>
+          <li>Comprar almacenamiento.</li>
+        </ul>
+
+        <p>El mercado se actualiza constantemente y con él los intereses de las personas cambian día con día, es por esto que IMOU trabaja constantemente para adaptarse y
+          satisfacer las necesidades del público.</p>
+
+        <p>Con IMOU, disfruta de la vida inteligente.</p>
+
+        <a href="{% url 'index-invitado' %}"><img class="IMOU" src="{%static 'core/images/imou.jpg' %}" alt=""></a>
+
+      <hr>
+  <!-- Team Members -->
+  <h2>Más Noticias</h2>
+
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <a href="{% url 'index-invitado' %}"><img class="card-img-top" src="{%static 'core/images/resfrio.jpg' %}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">La tecnología que nos permite estar en contacto en aislamiento</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Científica</h6>
+          <p class="card-text">Por Carlos Martínez</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Ir a la noticia ></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <a href="index.html"><img class="card-img-top" src="{%static 'core/images/dolares.jpg' %}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">EEUU: Déficit comercial alcanza récord de $74.400 millones</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Económica</h6>
+          <p class="card-text">Por Alejandro Bercovich</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Ir a la noticia ></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <a href="index.html"><img class="card-img-top" src="{%static 'core/images/social.jpg' %}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">Por qué la crianza es una responsabilidad social</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Social</h6>
+          <p class="card-text">Por Emiliana Pariente</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Ir a la noticia ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Comments Form -->
+      <div class="card my-4">
+        <h5 class="card-header">Deja un comentario</h5>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Comment with nested comments -->
+      <div class="media mb-4">
+        <a href="index.html"><img class="img-comentario d-flex mr-3 rounded-circle" src="{%static 'core/images/felipe.jpg' %}" alt=""></a>
+        <div class="media-body">
+          <h5 class="mt-0">Felipe López</h5>
+          Me parece una noticia increíble, es interesante y está muy bien escrita
+          <div class="media mt-4">
+            <a href="index.html"><img class="img-comentario d-flex mr-3 rounded-circle" src="{%static 'core/images/user.png' %}" alt=""></a>
+            <div class="media-body">
+              <h5 class="mt-0">Carlos Martínez</h5>
+              Muchas gracias por tu apoyo, Felipe
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+      <!-- Categories de etiquetas -->
+      <div class="card my-4">
+        <h5 class="card-header">Periodistas</h5>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#">Carlos Martínez</a>
+                </li>
+                <li>
+                  <a href="#">Jeff Jarvis</a>
+                </li>
+                <li>
+                  <a href="#">Emiliana Pariente</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#">Ramón Reig</a>
+                </li>
+                <li>
+                  <a href="#">Carolina Escobar</a>
+                </li>
+                <li>
+                  <a href="#">Holger Wormer</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+<!-- Footer -->
+<footer class="dropdown-toggle-split bg-dark ">
+  <div class="container">
+    <p class="auto text-center text-white">--- Caos News ---</p>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{%static 'core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{%static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{%static 'core/js/Buscador.js' %}"></script>
+<script src="{%static 'https://code.jquery.com/jquery-3.6.0.js' %}"></script>
+
+</body>
+
+</html>

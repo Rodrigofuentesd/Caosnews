@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Crear Usuario</title>
+
+    <!-- Bootstrap core CSS -->
+         <!-- Bootstrap core CSS -->
+         <link href="{%static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+         <!-- Custom styles for this template -->
+         <link href="{%static 'core/css/modern-business.css' %}" rel="stylesheet" />
+         <!-- Buscador -->
+         <link href="{%static 'core/css/Buscador.css' %}" rel="stylesheet" />
+         <!-- Validacion -->
+         <link href="{%static 'core/css/validation.css' %}" rel="stylesheet" />
+
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"
+    >
+      <div class="container">
+        <a href="{% url 'index-invitado' %}"
+          ><img class="logo" src="{%static 'core/images/logo.jpg' %}" alt=""
+        /></a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-1">
+            <li class="nav-item active dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownPortfolio"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdownPortfolio"
+              >
+                <a class="dropdown-item" href="{% url 'index-invitado' %}">Política</a>
+                <a class="dropdown-item" href="{% url 'index-invitado' %}">Economía</a>
+                <a class="dropdown-item" href="{% url 'index-invitado' %}">Cultural</a>
+                <a class="dropdown-item" href="{% url 'index-invitado' %}">Científica</a>
+                <a class="dropdown-item" href="{% url 'index-invitado' %}">Policial</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div>
+                <div class="autocomplete" >
+                  <input id="myInput" class="buscador" name="mySearch" placeholder="Buscar..." />
+                </div>
+               
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"></li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'create_user' %}">Crear Usuario</a>
+            </li>
+            <!-- Boton de inicio (abre) -->
+            <button
+              onclick="document.getElementById('id01').style.display='block'"
+            >
+              Inicio
+            </button>
+            <!-- The Modal -->
+            <div id="id01" class="modal">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="close"
+                title="Close Modal"
+                >&times;</span
+              >
+              <!-- Modal Content -->
+              <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                  <img
+                    src="{%static 'core/images/logo.jpg' %}"
+                    alt="Avatar"
+                    class="avatar"
+                  />
+                </div>
+                <div class="container">
+                  <label for="uname"><b>Usuario</b></label>
+                  <input
+                    type="text"
+                    placeholder="Ingrese el usuario"
+                    name="uname"
+                    required
+                  />
+
+                  <label for="psw"><b>Clave</b></label>
+                  <input
+                    type="password"
+                    placeholder="Ingrese la contraseña"
+                    name="psw"
+                    required
+                  />
+
+                  <a href="{% url 'index-usuario' %}"
+                    ><input class="button" type="button" value="Iniciar"
+                  /></a>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember" />
+                    Recuerdame
+                  </label>
+                </div>
+                <div class="container" style="background-color: #f1f1f1">
+                  <button
+                    type="button"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn"
+                  >
+                    Cancelar
+                  </button>
+                  <span class="psw">
+                    <a href="#">has olvidado la contraseña?</a></span
+                  >
+                </div>
+              </form>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container1">
+      <div class="header">
+        <h2>Crear Usuario</h2>
+
+    <div class="row">
+      <form method="post" action="" id="formulario">
+        {% csrf_token %}
+        <div class="form-group">
+        {{form.as_table}}
+        </div>
+
+        <input type="submit" class="btn btn-primary" id="enviar" value="Registrar">
+        <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+        
+      </form>  
+    </div>
+  </div>
+</div>
+
+      
+    <!-- Footer -->
+
+    <footer class="dropdown-toggle-split bg-dark fixed-bottom">
+      <div class="container">
+        <p class="auto text-center text-white">--- Caos NEWS ----</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="{%static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{%static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{%static 'core/js/Buscador.js' %}"></script>
+    <script src="{%static 'https://code.jquery.com/jquery-3.6.0.js' %}"></script>
+    <script src="{%static 'core/js/validation.js' %}"></script>
+  </body>
+</html>
